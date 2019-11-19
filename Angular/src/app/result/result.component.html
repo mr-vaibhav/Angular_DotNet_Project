@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid mt-3">
+        <h1 class="text-center">Result For Search Clients</h1>
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ClientId</th>
+                <th scope="col">FullName</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Address</th>
+            </tr>
+        </thead>
+        <tbody>           
+            <tr *ngFor=" let client of SearchDetailResult">
+                <td>{{client. ClientId}}</td>
+                <td>{{client.FirstName}} {{client.LastName}}</td>
+                <td>{{client.DOB}}</td>
+                <td *ngFor = "let show of client.clientAddresses">{{show.Address}}</td>
+            </tr>            
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>
